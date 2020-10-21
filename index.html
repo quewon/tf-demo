@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prototype</title>
+
+	<style>
+		html {
+			--bg: white;
+			--primary: black;
+			--secondary: yellow;
+
+			--notepad-size: 300px;
+		}
+
+		#container {
+			position: absolute;
+			border: 1px solid var(--primary);
+			width: 500px;
+			height: 500px;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			padding: 1em;
+		}
+
+		#notepad {
+			position: absolute;
+			background-color: var(--bg);
+			border: 1px solid var(--primary);
+			width: var(--notepad-size);
+			height: var(--notepad-size);
+			left: 70%;
+			top: 70%;
+			transform: translate(-50%, -50%);
+		}
+		#notepad-header {
+			background-color: var(--primary);
+			width: inherit;
+			height: 20px;
+			color: var(--bg);
+			cursor: default;
+		}
+		#notepad-content {
+			margin: 1em;
+		}
+
+		.word:hover {
+			background-color: var(--secondary);
+			cursor: pointer;
+		}
+
+		#log-tooltip {
+			visibility: hidden;
+			position: absolute;
+			bottom: -2em;
+		}
+		#log-area:hover + #log-tooltip {
+			visibility: visible;
+		}
+		#log-area {
+			display: inline-block;
+		}
+
+		#notepad-tooltip {
+			visibility: hidden;
+			position: absolute;
+			bottom: -3em;
+		}
+		#notepad-content:hover + #notepad-tooltip {
+			visibility: visible;
+		}
+
+		.selected {
+			background-color: var(--primary);
+			color: var(--bg);
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="log-area"></div>
+		<div id="log-tooltip">right click to add this word to your notepad!</div>
+	</div>
+
+	<div id="notepad">
+		<div id="notepad-header" class="draggable">notepad</div>
+		<div id="notepad-content"></div>
+		<div id="notepad-tooltip">right click to remove this word from your notepad! (left click to select)</div>
+	</div>
+</body>
+
+<script src="script.js"></script>
+<script src="dialog.js"></script>
+<script>
+	dragElement(notes.pad.parentElement);
+	log.print(dialog.TEST);
+</script>
+
+</html>
