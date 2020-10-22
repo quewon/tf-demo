@@ -79,6 +79,10 @@ notes.write = function(word) {
 		ev.preventDefault();
 
 		if (ev.button == 2) {
+			if (div.className.includes(" selected")) {
+				const index = notes.selected.indexOf(div.textContent);
+				notes.selected.splice(index, 1);
+			}
 			div.remove();
 		}
 
@@ -96,12 +100,12 @@ notes.write = function(word) {
 				const index = notes.selected.indexOf(content);
 				notes.selected.splice(index, 1);
 			}
+		}
 
-			if (notes.selected.length > 1) {
-				contradiction_button.style.display = "block";
-			} else {
-				contradiction_button.style.display = "none";
-			}
+		if (notes.selected.length > 1) {
+			contradiction_button.style.display = "block";
+		} else {
+			contradiction_button.style.display = "none";
 		}
 	};
 
