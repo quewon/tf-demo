@@ -43,6 +43,11 @@
 		#notepad-content {
 			margin: 1em;
 		}
+		#notepad-content-container {
+			height: calc(var(--notepad-size) - 20px);
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
 
 		.word:hover {
 			background-color: var(--secondary);
@@ -104,9 +109,11 @@
 
 	<div id="notepad">
 		<div id="notepad-header" class="draggable">notepad</div>
-		<div id="notepad-content"></div>
-		<div id="notepad-tooltip">right click to remove this word from your notepad! (left click to select)</div>
-		<button id="contradiction" onclick="contradiction()">there's a contradiction!</button>
+		<div id="notepad-content-container">
+			<div id="notepad-content"></div>
+			<div id="notepad-tooltip">right click to remove this word from your notepad! (left click to select)</div>
+			<button id="contradiction" onclick="contradiction()">there's a contradiction!</button>
+		</div>
 	</div>
 </body>
 
@@ -114,7 +121,7 @@
 <script src="dialog.js"></script>
 <script>
 	//here's how many items the notepad can hold
-	notes.limit = 10;
+	//notes.limit = 10;
 
 	//here's what lets the notepad be dragged around
 	dragElement(notes.pad.parentElement);

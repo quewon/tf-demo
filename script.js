@@ -64,10 +64,11 @@ log.clear = function() {
 
 //notepad functionality
 var notes = {};
+notes.limit = null;
 notes.pad = document.getElementById("notepad-content");
 notes.pad.parentElement.oncontextmenu = function(ev) { ev.preventDefault() };
 notes.write = function(word) {
-	if (notes.pad.childElementCount >= notes.limit) {
+	if (notes.limit && notes.pad.childElementCount >= notes.limit) {
 		return
 	}
 
