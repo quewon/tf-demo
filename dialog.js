@@ -1,3 +1,3 @@
 var dialog = {};
 
-dialog.TEST = `hi wow this is a cool game!!!`;
+dialog.TEST = `welcome to tf-demo.com! hi, my name is dummy... nice to meet you!!`;

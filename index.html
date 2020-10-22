@@ -74,6 +74,26 @@
 			background-color: var(--primary);
 			color: var(--bg);
 		}
+
+		#contradiction {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			border: 1px solid var(--primary);
+			background-color: transparent;
+			font-family: inherit;
+			font-size: inherit;
+			outline: 0;
+			display: none;
+		}
+		#contradiction:hover {
+			background-color: var(--secondary);
+			cursor: pointer;
+		}
+		#contradiction:active {
+			background-color: var(--primary);
+			color: var(--bg);
+		}
 	</style>
 </head>
 <body>
@@ -86,13 +106,20 @@
 		<div id="notepad-header" class="draggable">notepad</div>
 		<div id="notepad-content"></div>
 		<div id="notepad-tooltip">right click to remove this word from your notepad! (left click to select)</div>
+		<button id="contradiction" onclick="contradiction()">there's a contradiction!</button>
 	</div>
 </body>
 
 <script src="script.js"></script>
 <script src="dialog.js"></script>
 <script>
+	//here's how many items the notepad can hold
+	notes.limit = 10;
+
+	//here's what lets the notepad be dragged around
 	dragElement(notes.pad.parentElement);
+
+	//the first dialog entry
 	log.print(dialog.TEST);
 </script>
 
