@@ -161,3 +161,7 @@ function dragElement(e) {
 		document.onmousemove = null;
 	}
 }
+
+
+//to do list
+//make it so you can't take multiple of the same clue lol
